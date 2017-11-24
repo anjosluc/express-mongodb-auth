@@ -7,8 +7,11 @@ branches:
   - master
   - /^greenkeeper/.*$/
 
+before_script:
+  - npm install
+
 script:
-  - node app.js
+  - node app.js &
   - npm test
 
 notifications:
