@@ -9,9 +9,9 @@ branches:
 
 before_script:
   - npm install
+  - node app.js &
 
 script:
-  - node app.js &
   - npm test
 
 notifications:
