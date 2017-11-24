@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - node
+  - "6"
 
 branches:
   - master
@@ -9,9 +9,9 @@ branches:
 
 before_script:
   - npm install
-  - node app.js &
 
 script:
+  - node app.js &
   - npm test
 
 notifications:
