@@ -8,7 +8,7 @@ branches:
   - /^greenkeeper/.*$/
 
 script:
-  - test.js
+  - npm test
 
 notifications:
   email:

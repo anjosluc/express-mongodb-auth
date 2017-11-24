@@ -10,7 +10,8 @@ var reasons = {
 
 var UserSchema = mongoose.Schema({
   username : { type: String, required: true, index: { unique: true } },
-  password : { type: String, required: true }
+  password : { type: String, required: true },
+  admin : { type: Boolean, default: false }
 });
 
 //Generating salt and hashing password before save
@@ -49,6 +50,14 @@ UserSchema.statics.getAuthenticated = function(username, password, callback){
 
   });
 }
+
+UserSchema.statics.listUsers = function(callback){
+  this.find({}, (err, users) => {
+    if(err) return callback(err, null);
+
+    if(users) return callback(null, users);
+  });
+};
 
 UserSchema.methods.comparePassword = function(candidatePassword, callback){
   bcrypt.compare(candidatePassword, this.password, function(err, isMatch){
