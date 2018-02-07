@@ -3,11 +3,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''node -v
-npm install
-npm install bcrypt --save
-npm install -g firebase-tools
-node app.js &'''
+        sh 'node -v'
+        sh 'npm install'
+        sh 'npm install bcrypt --save'
+        sh 'node app.js &'
       }
     }
     stage('Test') {
