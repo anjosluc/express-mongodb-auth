@@ -12,7 +12,7 @@
     "assert": "^1.4.1",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
-    "express": "^4.16.2",
+    "express": "^4.17.1",
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.1.0",
     "mongoose": "^4.13.4",
